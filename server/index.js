@@ -10,17 +10,17 @@ const db = mysql.createConnection({
     host:"localhost",
     user:"root",
     password:"123456",
-    database:"SDGP_CRUD"
+    database:"USUARIOS"
 });
 
 app.post("/create",(req,res)=>{
     const nombre=req.body.nombre
     const edad=req.body.edad
-    const pais=req.body.pais
-    const cargo=req.body.cargo
-    const anios=req.body.anios
+    const correo=req.body.correo
+    const clave=req.body.clave
+    const telefono=req.body.telefono
 
-    db.query('INSERT INTO empleados(nombre, edad, pais, cargo, anios) VALUES(?,?,?,?,?)',[nombre,edad,pais,cargo,anios],
+    db.query('INSERT INTO empleados(nombre, edad, correo, clave, telefono) VALUES(?,?,?,?,?)',[nombre,edad,correo,clave,telefono],
     (err,result)=>{
         if(err){
             console.log(err);
@@ -47,11 +47,11 @@ app.put("/update",(req,res)=>{
     const idempleados=req.body.idempleados
     const nombre=req.body.nombre
     const edad=req.body.edad
-    const pais=req.body.pais
-    const cargo=req.body.cargo
-    const anios=req.body.anios
+    const correo=req.body.correo
+    const clave=req.body.clave
+    const telefono=req.body.telefono
 
-    db.query('UPDATE empleados SET nombre=?, edad=?, pais=?, cargo=?, anios=? WHERE idempleados=?',[nombre,edad,pais,cargo,anios,idempleados],
+    db.query('UPDATE empleados SET nombre=?, edad=?, correo=?, clave=?, telefono=? WHERE idempleados=?',[nombre,edad,correo,clave,telefono,idempleados],
     (err,result)=>{
         if(err){
             console.log(err);
