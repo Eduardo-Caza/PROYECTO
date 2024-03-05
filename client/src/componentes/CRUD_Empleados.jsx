@@ -62,16 +62,28 @@ const update = ()=>{
 }
 
 const deleteEmpleado = (idempleados)=>{
-  Axios.delete(`http://localhost:3001/delete/${idempleados}`).then(()=>{
-    getEmpleados();
-    limpiarCampos();
-    MySwal.fire({
-      title:<strong>Eliminacion Exitosa!!</strong>,
-      html: <i>Los datos de <strong>{nombre}</strong> se eliminaron con exito!!</i>,
-      icon: 'warning',
-      timer: 3000,
-    })
-  });  
+
+  Swal.fire({
+    title: "¿Está seguro?",
+    html: `<i>¿Desea banear a este usuario de la página?</i>`,
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "¡Sí, ban permanente!"
+}).then((result) => {
+    if (result.isConfirmed) {
+        Axios.delete(`http://localhost:3001/delete/${idempleados}`).then(() => {
+            getEmpleados();
+            limpiarCampos();
+            Swal.fire({
+                title: "¡Doxeado!",
+                html: `<i>Usuario ha sido BANEADO!!</i>`,
+                icon: "success"
+            });
+        });
+    }
+});
 }
 
 const limpiarCampos = ()=>{
