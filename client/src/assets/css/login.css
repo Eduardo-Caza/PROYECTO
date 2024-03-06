@@ -1,0 +1,99 @@
+.row {
+    display: flex;
+}
+
+body {
+    background: linear-gradient(90deg, #000033, #33CCFF, #00FFFF, #000033)
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #38684c;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.forgot-password a {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+    color: #000033;
+    text-decoration: none;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 10px;
+    background-color: #000033;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.9);
+}
+
+.signup-btn {
+    background-color: #000033;
+}
+
+.container_login{
+    text-align: center;
+    width: 50%;
+    margin: 30px auto;
+    background-color: rgb(194, 194, 194);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+}
+
+.crear_cuenta {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 4em;
+    color: #000033;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+    color: #000033;
+}
+
+div a button{
+    justify-content: center;
+}
+.Botones{
+    text-decoration: none;
+    color: #000033;
+    margin: 10px;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+.imagen_evento{
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}

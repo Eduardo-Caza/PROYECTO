@@ -1,6 +1,4 @@
-import '../App.css';
 import { useState } from 'react';
-
 import Axios from "axios";
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -257,7 +255,7 @@ useEffect(() => {
   getEmpleados();},[]);
 
   return (
-    <div className="container">
+    <div className="container_crud">
 
     <div className="card text-center">
       <div className="card-header">
