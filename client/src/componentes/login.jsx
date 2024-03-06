@@ -10,9 +10,9 @@ function login() {
           <h2>Iniciar Sesión</h2>
           <form>
             <label htmlFor="username">Usuario:</label>
-            <input placeholder="Usuario Generico" type="text" id="username" name="username"/>
+            <input placeholder="Usuario Generico" type="text" id="username" name="username" required/>
             <label htmlFor="password">Contraseña:</label>
-            <input placeholder="Tickets_Now_123" type="password" id="password" name="password"/>
+            <input placeholder="Tickets_Now_123" type="password" id="password" name="password" required/>
             <div className="forgot-password">
               <a href="/Rec_Contraseña">
                 ¿Olvidaste la contraseña?
@@ -21,6 +21,7 @@ function login() {
             <br></br>
             <div className="actions" style={{ textAlign: 'center', justifyContent: 'space-between'}}>
               <a className="Botones" href='/Inicio'>Iniciar Sesion</a>
+              <a className="Botones" href='/Crear_cuenta'>Crear Cuenta</a>
             </div>
           </form>
         </div>

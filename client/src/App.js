@@ -10,6 +10,7 @@ import Historial from './componentes/Historial';
 import Perfil_Usuario from './componentes/Perfil_Usuario';
 import Rec_Contraseña from './componentes/Rec_Contraseña';
 import Administrador from './componentes/CRUD_Empleados';
+import Crear_cuenta from './componentes/crear_cuenta';
 function App() {
   return (
     <Router>
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Perfil_Usuario" element={<Perfil_Usuario />} />
           <Route path="/Rec_Contraseña" element={<Rec_Contraseña />} />
           <Route path="/Administrador" element={<Administrador />} />
+          <Route path="/Crear_cuenta" element={<Crear_cuenta />} />
         </Routes>
       </div>
     </Router>

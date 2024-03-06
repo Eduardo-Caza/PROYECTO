@@ -276,7 +276,7 @@ useEffect(() => {
           <input type="number" value={edad}
           onChange={(event)=>{
             setEdad(event.target.value);
-          }} 
+          }}
           className="form-control" placeholder="Ingrese una edad" aria-label="Username" aria-describedby="basic-addon1"/>
         </div>
 

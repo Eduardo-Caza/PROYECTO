@@ -3,7 +3,7 @@
 }
 
 body {
-    background: linear-gradient(90deg, #000033, #33CCFF, #00FFFF, #000033)
+    background-color: rgb(231, 231, 231);
 }
 
 form {
