@@ -79,9 +79,18 @@ const deleteEmpleado = (idempleados)=>{
             Swal.fire({
                 title: "¡Doxeado!",
                 html: `<i>Usuario ha sido BANEADO!!</i>`,
-                icon: "success"
+                showConfirmButton: false,
+                icon: "success",
+                timer: 2000
             });
-        });
+        }).catch(function(error){
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "No se puso ir el desgraciao!!",
+            footer: error.AxiosError
+          });
+        })
     }
 });
 }
