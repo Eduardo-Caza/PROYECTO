@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from '../assets/imagenes/Tickets.png'
 function login() {
   return (
+    <div className='body'>
     <div className="container_login">
       <div className="row" style={{ justifyContent: 'center' }}>
         <div>
@@ -27,6 +28,7 @@ function login() {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -5,12 +5,15 @@
     border-radius: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
+.imagen_usuario:hover{
+    
+}
 .container_perfil{
     justify-content: center;
     align-items: center;
     width: 80%;
     margin: 30px auto;
-    background-color: rgb(194, 240, 226);
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     border-radius: 20px;
