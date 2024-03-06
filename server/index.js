@@ -31,6 +31,24 @@ app.post("/create",(req,res)=>{
     );
 });
 
+app.post("/createevento",(req,res)=>{
+    const titulo=req.body.titulo
+    const valor=req.body.valor
+    const descripcion=req.body.descripcion
+    const anfitrion=req.body.anfitrion
+    const capacidad=req.body.capacidad
+
+    db.query('INSERT INTO eventos(titulo, valor, descripcion, anfitrion, capacidad) VALUES(?,?,?,?,?)',[titulo,valor,descripcion,anfitrion,capacidad],
+    (err,result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.send(result);
+        }
+    }
+    );
+});
+
 app.get("/empleados",(req,res)=>{
     db.query('SELECT * FROM empleados',
     (err,result)=>{
@@ -42,6 +60,19 @@ app.get("/empleados",(req,res)=>{
     }
     );
 });
+
+app.get("/evento",(req,res)=>{
+    db.query('SELECT * FROM eventos',
+    (err,result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.send(result);
+        }
+    }
+    );
+});
+
 
 app.put("/update",(req,res)=>{
     const idempleados=req.body.idempleados
@@ -62,10 +93,43 @@ app.put("/update",(req,res)=>{
     );
 });
 
+app.put("/updateevento",(req,res)=>{
+    const idevento=req.body.idevento
+    const titulo=req.body.titulo
+    const valor=req.body.valor
+    const descripcion=req.body.descripcion
+    const anfitrion=req.body.anfitrion
+    const capacidad=req.body.capacidad
+
+    db.query('UPDATE eventos SET titulo=?, valor=?, descripcion=?, anfitrion=?, capacidad=? WHERE idevento=?',[titulo,valor,descripcion,anfitrion,capacidad,idevento],
+    (err,result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.send(result);
+        }
+    }
+    );
+});
+
 app.delete("/delete/:idempleados",(req,res)=>{
     const idempleados=req.params.idempleados;
 
     db.query('DELETE FROM empleados WHERE idempleados=?',[idempleados],
+    (err,result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.send(result);
+        }
+    }
+    );
+});
+
+app.delete("/deleteevento/:idevento",(req,res)=>{
+    const idevento=req.params.idevento;
+
+    db.query('DELETE FROM eventos WHERE idevento=?',[idevento],
     (err,result)=>{
         if(err){
             console.log(err);
