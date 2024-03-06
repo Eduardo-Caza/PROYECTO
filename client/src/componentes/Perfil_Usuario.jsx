@@ -4,13 +4,11 @@ import '../assets/css/perfil.css';
 const PerfilUsuario = () => {
   return (
     <div>
-      <header className='header'>
-        <h1>Tickets Now</h1>
-      </header>
       <nav className='navegacion_web'>
-        <a className='login_a' href="/Nosotros">Nosotros</a>
-        <a className='login_a' href="/Perfil_Usuario">Perfil</a>
-        <a className='login_a' href="/">Cerrar sesion</a>
+        <a className='login_perfil' href="/Perfil_Usuario">Perfil</a>
+        <a className='login_carrito' href="/Carrito">Carrito</a>
+        <a className='login_nosotros' href="/Nosotros">Nosotros</a>
+        <a className='login_cerrar' href="/">Cerrar</a>
       </nav>
       <main>
         <div className="container_perfil">

@@ -47,15 +47,7 @@ input {
     background-color: #000033;
 }
 
-.container {
-    width: 50%;
-    margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-    border-radius: 20px;
-    text-align: center;
-}
+
 
 .crear_cuenta {
     margin: 0;
@@ -65,21 +57,13 @@ input {
     background-color: #f4f4f4;
 }
 
-h1 {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 4em;
-    color: #000033;
-}
-
-h2 {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 3em;
-    color: #000033;
-}
-
 div a button {
     justify-content: center;
 }
 
+.container .mt-5 h1{
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 4em;
+    color: #000033;
+}

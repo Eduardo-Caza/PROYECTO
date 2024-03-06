@@ -1,6 +1,3 @@
-.row {
-    display: flex;
-}
 
 body {
     background-color: rgb(231, 231, 231);
@@ -13,21 +10,25 @@ form {
 
 label {
     margin-top: 10px;
-    color: #38684c;
+    color: #049967;
 }
 
 input {
     padding: 8px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 3px;
+}
+input:hover{
+    border: 1px solid #049967;
+
 }
 
 .forgot-password a {
     font-size: 12px;
     text-align: center;
     margin-top: 10px;
-    color: #000033;
+    color: #049967;
     text-decoration: none;
 }
 
@@ -46,7 +47,34 @@ input {
 .signup-btn {
     background-color: #000033;
 }
-
+.login_iniciar{
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 5px;
+    border: 2px solid #1739f8;
+}
+.login_crear{
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 5px;
+    border: 2px solid rgb(31, 255, 31);
+}
+.login_crear:hover{
+    background-color: rgb(31, 255, 31);
+    box-shadow: 0 0 100px rgba(255, 221, 31);
+}
+.login_iniciar:hover{
+    background-color: #1739f8;
+    box-shadow: 0 0 100px rgba(255, 221, 31);
+}
 .container_login{
     text-align: center;
     width: 50%;
@@ -65,16 +93,16 @@ input {
     background-color: #f4f4f4;
 }
 
-h1 {
+.h1_login{
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 4em;
     color: #000033;
 }
 
-h2 {
+.h2_login {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Helvetica';
     font-size: 3em;
     color: #000033;
 }

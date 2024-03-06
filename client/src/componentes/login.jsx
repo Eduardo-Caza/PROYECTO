@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/css/login.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from '../assets/imagenes/Tickets.png'
 function login() {
   return (
@@ -7,7 +8,7 @@ function login() {
       <div className="row" style={{ justifyContent: 'center' }}>
         <div>
           <img className="imagen_evento" src={Logo} alt="Festival de Musica" />
-          <h2>Iniciar Sesión</h2>
+          <h2 className='h2_login'>Iniciar Sesión</h2>
           <form>
             <label htmlFor="username">Usuario:</label>
             <input placeholder="Usuario Generico" type="text" id="username" name="username" required/>
@@ -20,8 +21,8 @@ function login() {
             </div>
             <br></br>
             <div className="actions" style={{ textAlign: 'center', justifyContent: 'space-between'}}>
-              <a className="Botones" href='/Inicio'>Iniciar Sesion</a>
-              <a className="Botones" href='/Crear_cuenta'>Crear Cuenta</a>
+              <a className="login_iniciar" href='/Inicio'>Iniciar Sesion</a>
+              <a className="login_crear" href='/Crear_cuenta'>Crear Cuenta</a>
             </div>
           </form>
         </div>

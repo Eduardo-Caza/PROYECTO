@@ -10,129 +10,6 @@ const MySwal = withReactContent(Swal)
 
 function App() {
 
-    const [titulo, setTitulo] = useState("");
-    const [valor, setValor] = useState();
-    const [descripcion, setDescripcion] = useState("");
-    const [anfitrion, setAnfitrion] = useState("");
-    const [capacidad, setCapacidad] = useState();
-    const [idevento, setIdevento] = useState();
-
-    const [editarev, setEditarev] = useState(false);
-
-    const [eventoList, setEvento] = useState([]);
-
-    const addev = () => {
-        Axios.post("http://localhost:3001/createevento", {
-            titulo: titulo,
-            valor: valor,
-            descripcion: descripcion,
-            anfitrion: anfitrion,
-            capacidad: capacidad
-        }).then(() => {
-            getEvento();
-            limpiarCamposev();
-            MySwal.fire({
-                title: <strong>Registro Exitoso!!</strong>,
-                html: <i>El evento <strong>{titulo}</strong> fue registrado con exito!!</i>,
-                icon: 'success',
-                timer: 3000,
-            })
-        });
-    }
-
-    const updateevento = () => {
-        Axios.put("http://localhost:3001/updateevento", {
-            idevento: idevento,
-            titulo: titulo,
-            valor: valor,
-            descripcion: descripcion,
-            anfitrion: anfitrion,
-            capacidad: capacidad
-        }).then(() => {
-            getEvento();
-            limpiarCamposev();
-            MySwal.fire({
-                title: <strong>Actualizacion Exitosa!!</strong>,
-                html: <i>Los datos de <strong>{titulo}</strong> se actualizaron con exito!!</i>,
-                icon: 'success',
-                timer: 3000,
-            })
-        });
-    }
-
-    const deleteevento = (idevento) => {
-
-        Swal.fire({
-            title: "¿Está seguro?",
-            html: `<i>¿Desea eliminar este evento de la página?</i>`,
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "¡Sí, ban permanente!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Axios.delete(`http://localhost:3001/deleteevento/${idevento}`).then(() => {
-                    getEvento();
-                    limpiarCamposev();
-                    Swal.fire({
-                        title: "¡Doxeado!",
-                        html: `<i>Evento ha sido Eliminado!!</i>`,
-                        showConfirmButton: false,
-                        icon: "success",
-                        timer: 2000
-                    });
-                }).catch(function (error) {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: "No me quiero ir Sr.Stark!!",
-                        footer: error.AxiosError
-                    });
-                })
-            }
-        });
-    }
-
-    const limpiarCamposev = () => {
-        setTitulo("");
-        setValor("");
-        setDescripcion("");
-        setAnfitrion("");
-        setCapacidad("");
-        setEditarev(false);
-        MySwal.fire({
-            title: <strong>Cancelado!!</strong>,
-            html: <i>Se cancelo la actualizacion de datos!!</i>,
-            icon: 'info',
-            timer: 3000,
-        })
-    }
-
-    const editarEvento = (val) => {
-        setEditarev(true);
-
-        setTitulo(val.titulo);
-        setValor(val.valor);
-        setDescripcion(val.descripcion);
-        setAnfitrion(val.anfitrion);
-        setCapacidad(val.capacidad);
-        setIdevento(val.idevento);
-
-    }
-
-    const getEvento = () => {
-        Axios.get("http://localhost:3001/evento").then((response) => {
-            setEvento(response.data);
-        });
-    }
-
-
-    useEffect(() => {
-        // Llamar a getEmpleados solo una vez cuando el componente se monte
-        getEvento();
-    }, []);
-
     const [nombre, setNombre] = useState("");
     const [edad, setEdad] = useState();
     const [correo, setCorreo] = useState("");
@@ -182,41 +59,6 @@ function App() {
             })
         });
     }
-
-    const deleteEmpleado = (idempleados) => {
-
-        Swal.fire({
-            title: "¿Está seguro?",
-            html: `<i>¿Desea banear a este usuario de la página?</i>`,
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "¡Sí, ban permanente!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Axios.delete(`http://localhost:3001/delete/${idempleados}`).then(() => {
-                    getEmpleados();
-                    limpiarCampos();
-                    Swal.fire({
-                        title: "¡Doxeado!",
-                        html: `<i>Usuario ha sido BANEADO!!</i>`,
-                        showConfirmButton: false,
-                        icon: "success",
-                        timer: 2000
-                    });
-                }).catch(function (error) {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: "No se pudo ir el desgraciao!!",
-                        footer: error.AxiosError
-                    });
-                })
-            }
-        });
-    }
-
     const limpiarCampos = () => {
         setEdad("");
         setNombre("");
@@ -230,18 +72,6 @@ function App() {
             icon: 'info',
             timer: 3000,
         })
-    }
-
-    const editarEmpleado = (val) => {
-        setEditar(true);
-
-        setNombre(val.nombre);
-        setEdad(val.edad);
-        setCorreo(val.correo);
-        setClave(val.clave);
-        setTelefono(val.telefono);
-        setIdempleados(val.idempleados);
-
     }
 
     const getEmpleados = () => {
@@ -261,7 +91,7 @@ function App() {
 
             <div className="card text-center">
                 <div className="card-header">
-                    GESTION DE USUARIOS
+                    CREAR CUENTA
                 </div>
                 <div className="card-body">
                     <div className="input-group mb-3">
@@ -319,6 +149,7 @@ function App() {
                             <button className='btn btn-success' onClick={add}>Registrar</button>
                     }
                 </div>
+                <a className='login_crear' href="/">Regresar</a>
             </div>
         </div>
     );
