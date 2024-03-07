@@ -164,6 +164,16 @@ app.post("/login", (req, res) => {
     );
   });  
 
+app.get("/eventos", (req, res) => {
+    db.query('SELECT * FROM eventos', (err, result) => {
+        if(err) {
+            console.log(err);
+            res.status(500).send('Error de servidor');
+            return;
+        }
+        res.json(result);
+    });
+});
 
 app.listen(3001,()=>{
     console.log("Corriendo en el puerto 3001")
