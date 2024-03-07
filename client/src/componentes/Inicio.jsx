@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import '../assets/css/inicio.css';
+import Foto from '../assets/imagenes/festivalmusica.jpg';
 
 function Inicio() {
   const [eventos, setEventos] = useState([]);
@@ -38,7 +39,7 @@ function Inicio() {
             <h3 className="text-center">Descripción</h3>
             <p>{evento.descripcion}</p>
             <hr className="my-4" />
-            <img className="imagen_evento" src={evento.imagen} alt={evento.titulo} />
+            <img className="imagen_evento" src={Foto} alt={evento.titulo} />
             <hr className="my-4" />
             <nav className='navegacion_eventos'>
               <a className='btn btn-primary mr-2' href="/Carrito">Añadir al carrito</a>
