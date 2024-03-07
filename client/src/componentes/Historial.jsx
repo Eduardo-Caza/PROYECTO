@@ -5,9 +5,11 @@ const Comentarios = () => {
   return (
     <>
     <nav className='navegacion_web'>
-        <a className='login_a' href="/Nosotros">Nosotros</a>
-        <a className='login_a' href="/Perfil_Usuario">Perfil</a>
-        <a className='login_a' href="/">Cerrar sesion</a>
+        <a className='login_perfil' href="/Perfil_Usuario">Perfil</a>
+        <a className='login_nosotros' href="/Inicio">Inicio</a>
+        <a className='login_carrito' href="/Carrito">Carrito</a>
+        <a className='login_nosotros' href="/Nosotros">Nosotros</a>
+        <a className='login_cerrar' href="/">Cerrar</a>
       </nav>
       <section className="comentarios">
         <div className='container_historial'>
@@ -19,7 +21,15 @@ const Comentarios = () => {
             con un atractivo en el género country.
             La diversidad de artistas como "Pepe",
             "Nombre Genérico", "Pipas" y "Conejo Mañoso"
-            promete ofrecer una variedad de estilos y enfoques dentro del mundo del country. Los eventos musicales no solo son oportunidades para disfrutar de la música, sino también para sumergirse en la atmósfera cultural que rodea a los artistas y a la ubicación en sí. Con Los Ángeles como telón de fondo, la combinación de la escena musical y el ambiente californiano seguramente creará una experiencia inolvidable para los asistentes. ¡Que viva la música
+            promete ofrecer una variedad de estilos y enfoques
+            dentro del mundo del country. Los eventos musicales
+            no solo son oportunidades para disfrutar de la música,
+            sino también para sumergirse en la atmósfera cultural que
+            rodea a los artistas y a la ubicación en sí.
+            Con Los Ángeles como telón de fondo, la combinación
+            de la escena musical y el ambiente californiano seguramente
+            creará una experiencia inolvidable para los asistentes.
+            ¡Que viva la música
             y que POLICALIFA sea un éxito rotundo!</p>
           <nav>
           <a className='historial_a' href="/Inicio">Evento</a>

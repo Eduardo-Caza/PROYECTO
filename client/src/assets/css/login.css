@@ -156,7 +156,7 @@ div a button {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
-.imagen_evento {
+.imagen_login {
     margin: auto;
     width: 300px;
     height: 300px;
@@ -164,7 +164,7 @@ div a button {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
-.imagen_evento:hover {
+.imagen_login:hover {
     border-radius: 50%;
     -webkit-border-radius: 50%;
     box-shadow: 0px 0px 15px 15px #049967;

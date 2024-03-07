@@ -7,6 +7,7 @@ function Nosotros() {
         <>
             <nav className='navegacion_web'>
                 <a className='login_perfil' href="/Perfil_Usuario">Perfil</a>
+                <a className='login_nosotros' href="/Inicio">Inicio</a>
                 <a className='login_carrito' href="/Carrito">Carrito</a>
                 <a className='login_nosotros' href="/Nosotros">Nosotros</a>
                 <a className='login_cerrar' href="/">Cerrar</a>
@@ -44,15 +45,15 @@ function Nosotros() {
                         ¡Haz de tu próximo evento un éxito memorable con Tickets Now!
                     </p>
                     <a href="/Inicio" className="btn btn-primary mt-3">Regresar</a>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </section>
             </div>
         </>

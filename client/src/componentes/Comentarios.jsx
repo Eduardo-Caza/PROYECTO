@@ -111,11 +111,13 @@ const ComentariosSection = () => {
 const Comentarios = () => {
   return (
     <div>
-    <nav className='navegacion_web'>
-        <a className='login_a' href="/Nosotros">Nosotros</a>
-        <a className='login_a' href="/Perfil_Usuario">Perfil</a>
-        <a className='login_a' href="/">Cerrar sesion</a>
-    </nav>
+      <nav className='navegacion_web'>
+        <a className='login_perfil' href="/Perfil_Usuario">Perfil</a>
+        <a className='login_nosotros' href="/Inicio">Inicio</a>
+        <a className='login_carrito' href="/Carrito">Carrito</a>
+        <a className='login_nosotros' href="/Nosotros">Nosotros</a>
+        <a className='login_cerrar' href="/">Cerrar</a>
+      </nav>
       <section className="comentarios">
         <div className='container_Comentario'>
           <h2>Disfrutable</h2>
@@ -133,7 +135,7 @@ const Comentarios = () => {
             éxito rotundo!
           </p>
           <nav>
-            <a className='login_a' href="/Inicio" style={{textDecoration: 'none'}}>Evento</a>
+            <a className='login_a' href="/Inicio" style={{ textDecoration: 'none' }}>Evento</a>
           </nav>
         </div>
       </section>
@@ -149,7 +151,7 @@ const Comentarios = () => {
             tradicional.
           </p>
           <nav>
-            <a className='login_a' href="/Inicio" style={{textDecoration: 'none'}}>Evento</a>
+            <a className='login_a' href="/Inicio" style={{ textDecoration: 'none' }}>Evento</a>
           </nav>
         </div>
       </section>

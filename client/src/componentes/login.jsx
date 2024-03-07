@@ -45,7 +45,7 @@ function Login() {
       <div className="container_login">
         <div className="row" style={{ justifyContent: 'center' }}>
           <div>
-            <img className="imagen_evento" src={Logo} alt="Festival de Musica" />
+            <img className="imagen_login" src={Logo} alt="Festival de Musica" />
             <h2 className='h2_login'>Iniciar Sesión</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="email">Correo electrónico:</label>

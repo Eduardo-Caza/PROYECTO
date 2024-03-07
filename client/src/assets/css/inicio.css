@@ -66,3 +66,11 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
+.imagen_evento:hover {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    box-shadow: 0px 0px 15px 15px #049967;
+    -webkit-box-shadow: 0px 0px 15px 15px #049967;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(90eg);
+}
