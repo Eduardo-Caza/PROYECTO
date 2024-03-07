@@ -1,31 +1,71 @@
-import React from 'react';
-import imagen2 from '../assets/imagenes/festivalmusica.jpg'
+import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 import '../assets/css/inicio.css';
-const Evento = ({ nombre, ubicacion, etiquetas, descripcion, imagenSrc }) => {
+import Foto from '../assets/imagenes/festivalmusica.jpg';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+const MySwal = withReactContent(Swal);
+
+const Evento = ({ evento }) => {
+  const handleCompraClick = () => {
+    MySwal.fire({
+      title: <strong>Compra realizada!</strong>,
+      text: 'Su compra ha sido realizada con éxito.',
+      icon: 'success',
+      confirmButtonText: 'Aceptar',
+      timer:2500,
+    });
+  };
+
+  const handleComentariosClick = () => {
+    window.location.href = "/Comentarios";
+  };
+
   return (
     <div className="row my-4">
       <div className="col-md-6" id="col1">
-        <h1 className="display-4">{nombre}</h1>
-        <h3>Ubicacion: {ubicacion}</h3>
-        <h3>Etiquetas: {etiquetas}</h3>
+        <h1 className="display-4">{evento.titulo}</h1>
+        <h3>Precio: {evento.valor || evento.anfitrion}</h3>
+        <h3>Capacidad: {evento.capacidad}</h3>
         <hr className="my-4" />
-        <h3 className="text-center">Descripcion</h3>
-        <p>{descripcion}</p>
+        <h3 className="text-center">Descripción</h3>
+        <p>{evento.descripcion}</p>
       </div>
       <div className="col-md-6" id="col2">
-        <hr className="my-4" />
-        <img className="img-fluid" src={imagen2} alt={nombre} />
-        <nav className="mt-3">
-          <a className="btn btn-primary mr-2" href="">Comprar</a>
-          <a className="btn btn-secondary" href="/Comentarios">Comentarios</a>
-        </nav>
-        <hr className="my-4" />
+        <div className="d-flex flex-column justify-content-between h-100">
+          <div>
+            <img className="img-fluid" src={Foto} alt={evento.titulo} />
+          </div>
+          <div className="mt-3">
+            <div>
+              <button className='btn btn-warning m-2' onClick={handleCompraClick}>Comprar</button>
+              <button className='btn btn-info m-2' onClick={handleComentariosClick}>Comentarios</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 const App = () => {
+  const [eventos1, setEventos1] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response1 = await axios.get('http://localhost:3001/eventos');
+        setEventos1(response1.data);
+      } catch (error) {
+        console.error('Error al obtener eventos:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <nav className='navegacion_web'>
@@ -36,26 +76,13 @@ const App = () => {
       </nav>
       <div className="container_inicio">
         <section>
-          <Evento
-            nombre="POLICALIFA"
-            ubicacion="Los Angeles"
-            etiquetas="Musica, Festival, Fiestas"
-            descripcion="Festival de musica con artistas de talla mundial como El conejo mañoso"
-            imagenSrc="assets/imagenes/festivalmusica.jpg"
-          />
+          <h2>Eventos Disponibles para Reservar</h2>
+          {eventos1.map(evento => (
+            <Evento key={evento.idevento} evento={evento} />
+          ))}
         </section>
         <hr className="my-4" />
-        <section>
-          <Evento
-            nombre="El pixel"
-            ubicacion="Quito"
-            etiquetas="Musica, Festival, Fiestas"
-            descripcion="Festival de art con artistas de talla mundial como Pablo Cassio"
-            imagenSrc="assets/imagenes/festovalmusica.jpg"
-          />
-        </section>
       </div>
-      <br/>
     </>
   );
 };
