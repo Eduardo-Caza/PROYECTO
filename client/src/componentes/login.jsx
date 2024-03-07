@@ -13,22 +13,22 @@ function Login() {
   const [email, setEmail] = useState('');
   const [contra, setContra] = useState('');
   const [error, setError] = useState(null);
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
       const response = await axios.post('http://localhost:3001/login', {
         email,
         contra
       });
-  
+
       if (response.data === 'success') {
         // Redireccionar a la siguiente página
         window.location.href = '/Inicio';
       } else {
         MySwal.fire({
-          title:<strong>Equivocado!!</strong>,
+          title: <strong>Equivocado!!</strong>,
           html: <i>Usuario o Contraseña Incorrectos!!</i>,
           icon: 'error',
           timer: 3000,
@@ -49,21 +49,21 @@ function Login() {
             <h2 className='h2_login'>Iniciar Sesión</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="email">Correo electrónico:</label>
-              <input 
-                placeholder="Correo electrónico" 
-                type="email" 
-                id="email" 
-                name="email" 
+              <input
+                placeholder="Correo electrónico"
+                type="email"
+                id="email"
+                name="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <label htmlFor="password">Contraseña:</label>
-              <input 
-                placeholder="Contraseña" 
-                type="password" 
-                id="password" 
-                name="password" 
+              <input
+                placeholder="Contraseña"
+                type="password"
+                id="password"
+                name="password"
                 required
                 value={contra}
                 onChange={(e) => setContra(e.target.value)}
@@ -75,7 +75,7 @@ function Login() {
               </div>
               {error && <div className="error-message">{error}</div>}
               <br />
-              <div className="actions" style={{ textAlign: 'center', justifyContent: 'space-between'}}>
+              <div className="actions" style={{ textAlign: 'center', justifyContent: 'space-between' }}>
                 <button className="login_iniciar" type="submit">Iniciar Sesión</button>
                 <a className="login_crear" href='/Crear_cuenta'>Crear Cuenta</a>
               </div>
