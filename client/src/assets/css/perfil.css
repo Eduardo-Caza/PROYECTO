@@ -13,7 +13,7 @@
     align-items: center;
     width: 80%;
     margin: 30px auto;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     border-radius: 20px;
@@ -21,6 +21,14 @@
 }
 h1{
     font-size: 1.5em;
+    color: #fff;
+}
+p{
+    font-size: 1em;
+    color: #fff;
+}
+.list-group{
+    box-shadow: 0 0 70px #000033;
 }
 .perfil_a{
     padding: 10px;
