@@ -21,9 +21,12 @@ const ComentariosSection = () => {
     link: '',
   });
   const agregarComentario = () => {
-    setComentarios([...comentarios, nuevoComentario]);
+    const nuevosComentarios = [...comentarios];
+    nuevosComentarios.splice(1, 0, nuevoComentario); // Inserta el nuevo comentario después del segundo comentario
+    setComentarios(nuevosComentarios);
     setNuevoComentario({ titulo: '', opinion: '', link: '' });
   };
+  
   return (
     <section id="comentarios" className="mt-5">
       <div className="container">
