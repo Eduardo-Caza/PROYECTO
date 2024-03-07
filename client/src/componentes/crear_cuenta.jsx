@@ -149,8 +149,16 @@ function App() {
                             <button className='btn btn-success' onClick={add}>Registrar</button>
                     }
                 </div>
+            <br/>
                 <a className='login_crear2' href="/">Regresar</a>
             </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         </div>
     );
 }

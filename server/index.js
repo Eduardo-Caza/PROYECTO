@@ -140,6 +140,31 @@ app.delete("/deleteevento/:idevento",(req,res)=>{
     );
 });
 
+app.post("/login", (req, res) => {
+    const { email, contra } = req.body;
+  
+    db.query(
+      'SELECT * FROM empleados WHERE correo = ? AND clave = ?', 
+      [email, contra],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send('Error de servidor');
+          return;
+        }
+  
+        if (result.length > 0) {
+          // Credenciales correctas
+          res.send('success');
+        } else {
+          // Credenciales incorrectas
+          res.send('failure');
+        }
+      }
+    );
+  });  
+
+
 app.listen(3001,()=>{
     console.log("Corriendo en el puerto 3001")
 })

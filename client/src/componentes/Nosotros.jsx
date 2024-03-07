@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../assets/css/Nosotros.css';
 
 function Nosotros() {
     return (
@@ -43,6 +44,15 @@ function Nosotros() {
                         ¡Haz de tu próximo evento un éxito memorable con Tickets Now!
                     </p>
                     <a href="/Inicio" className="btn btn-primary mt-3">Regresar</a>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                 </section>
             </div>
         </>
