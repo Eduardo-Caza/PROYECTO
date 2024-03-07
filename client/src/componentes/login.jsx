@@ -3,6 +3,11 @@ import '../assets/css/login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from '../assets/imagenes/Tickets.png';
 import axios from 'axios';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -22,7 +27,12 @@ function Login() {
         // Redireccionar a la siguiente página
         window.location.href = '/Inicio';
       } else {
-        setError('Correo electrónico o contraseña incorrectos');
+        MySwal.fire({
+          title:<strong>Equivocado!!</strong>,
+          html: <i>Usuario o Contraseña Incorrectos!!</i>,
+          icon: 'error',
+          timer: 3000,
+        })
       }
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
